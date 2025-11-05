@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import com.ieselgrao.gametofork.util.GradientFactory;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import java.io.IOException;
@@ -84,9 +85,11 @@ public class GameController {
         double radius = MIN_RADIUS + (MAX_RADIUS - MIN_RADIUS) * random.nextDouble();
         double x = radius + (random.nextDouble() * (gamePane.getWidth() - 2 * radius));
 
-        Circle circle = new Circle(radius, Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
-        circle.setLayoutX(x);
-        circle.setLayoutY(-radius); // Inicia fuera de la parte superior
+    Circle circle = new Circle(radius);
+    // Usa un degradado generado por la fábrica para un efecto más atractivo
+    circle.setFill(GradientFactory.createRandomGradient(random));
+    circle.setLayoutX(x);
+    circle.setLayoutY(-radius); // Inicia fuera de la parte superior
 
         // Asigna puntos según el tamaño (círculos más pequeños dan más puntos)
         int points = (int) (MAX_RADIUS - radius + 1);

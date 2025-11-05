@@ -85,7 +85,3 @@ git push -u origin styles
 Gráfico de las ramas.
 
 ![Grafo de ramas](./img/branch-graph.png)
-
-## Créditos / IA
-
-Si usaste IA en parte del proceso, cítala aquí. En este caso se usaron tus instrucciones (prompts) y la implementación fue generada/ajustada en el código del repositorio.
